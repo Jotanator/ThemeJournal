@@ -40,7 +40,7 @@ export default class App extends React.Component {
             autoFocus
             onBlur={() => this.setState({ descEditable: false })}
           /> :
-          <Text style={styles.descText} adjustsFontSizeToFit={true}
+          <Text style={styles.baseText} adjustsFontSizeToFit={true}
             onPress={() => this.setState({ descEditable: true })}
           >
             {this.state.descText}
@@ -98,11 +98,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fcd9a4',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingLeft: 40,
+    paddingRight: 40,
     marginTop: StatusBar.currentHeight || 0,
   },
   baseText: {
-    paddingLeft: 140,
-    paddingRight: 140,
     textAlign: "center"
   },
   titleText: {
@@ -116,9 +116,7 @@ const styles = StyleSheet.create({
   },
   idealListText: {
     paddingTop: 40,
-    paddingLeft: 40,
-    paddingRight: 40,
     fontWeight: "bold",
-    textAlign: "justify"
+    textAlign: "center"
   }
 });
