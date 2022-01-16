@@ -9,6 +9,8 @@ import LoginScreen from './Screens/LoginScreen';
 import HomeScreen from './Screens/HomeScreen';
 import CalendarScreen from './Screens/CalendarApp';
 import DailyScreen from './Screens/DailyLog';
+import FreeWrite from './Screens/FreeWrite';
+
 
 
 //import DailyLog from './DailyLog';
@@ -45,6 +47,7 @@ function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Calendar" component={CalendarScreen} />
         <Stack.Screen name="Daily" component={DailyScreen} />
+        <Stack.Screen name="FreeWrite" component={FreeWrite} />
       </Stack.Navigator>
     </NavigationContainer>
   );

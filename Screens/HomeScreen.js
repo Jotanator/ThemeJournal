@@ -110,8 +110,10 @@ export default class Home extends React.Component {
                 }
                 <View flexDirection="row" style={{paddingTop: 40}}>
                     <Button color="#c25e06" title="Daily Log" onPress={() => navigation.navigate('Daily')}/>
-                    <View style={{width: 40}}/>
+                    <View style={{width: 10}}/>
                     <Button color="#c25e06" title="Calendar" onPress={() => navigation.navigate('Calendar')}/>
+                    <View style={{width: 10}}/>
+                    <Button color="#c25e06" title="Free Write" onPress={() => navigation.navigate('FreeWrite')}/>
                 </View>
                 <StatusBar style="auto" />
             </SafeAreaView>
