@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
   baseText: {
     paddingTop: 10,
     paddingBottom: 10,
-    textAlign: "center"
+    textAlign: "left"
   },
   titleText: {
     paddingTop: 10,
