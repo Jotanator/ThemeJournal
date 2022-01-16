@@ -2,7 +2,6 @@ import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useState } from 'react'
 import { KeyboardAvoidingView, StyleSheet, Text, SafeAreaView, View, TextInput, TouchableOpacity } from 'react-native'
 import { auth, db } from '../Firebase/firebase'
-// import {onSnapshot, collection} from "@firebase/firestore";
 import { collection, getDocs } from "firebase/firestore/lite";
 
 export const GetData = async () => {
@@ -58,10 +57,6 @@ const LoginScreen = () => {
           style={styles.container}
           behavior='padding'
         >
-            <SafeAreaView>
-                <Text style={styles.titleText} adjustsFontSizeToFit={true}>
-                    GetData()</Text>
-            </SafeAreaView>
             <View style={styles.inputContainer}>
             <TextInput 
                 placeholder="Email"
