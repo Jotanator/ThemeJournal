@@ -7,8 +7,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import LoginScreen from './Screens/LoginScreen';
 import HomeScreen from './Screens/HomeScreen';
-import CalendarScreen from './CalendarApp';
-import DailyScreen from './DailyLog';
+import CalendarScreen from './Screens/CalendarApp';
+import DailyScreen from './Screens/DailyLog';
 
 
 //import DailyLog from './DailyLog';

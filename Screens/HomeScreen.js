@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, SafeAreaView, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, TextInput, View, Button } from 'react-native';
 import * as fromLogin from './LoginScreen';
 import { useNavigation } from '@react-navigation/core'
 
@@ -108,7 +108,11 @@ export default class Home extends React.Component {
                         {this.state.goal3Text}
                     </Text>
                 }
-                <Button title="Daily Log" onPress={() => navigation.navigate('Daily')}/>
+                <View flexDirection="row" style={{paddingTop: 40}}>
+                    <Button color="#c25e06" title="Daily Log" onPress={() => navigation.navigate('Daily')}/>
+                    <View style={{width: 40}}/>
+                    <Button color="#c25e06" title="Calendar" onPress={() => navigation.navigate('Calendar')}/>
+                </View>
                 <StatusBar style="auto" />
             </SafeAreaView>
         );
