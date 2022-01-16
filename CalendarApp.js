@@ -12,7 +12,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <CalendarPicker onDateChange={setSelectedStartDate} />
+      <CalendarPicker onDateChange={setSelectedStartDate}
+        todayBackgroundColor="#a1e872" selectedBackgroundColor="#c25e06" />
       {/* <Text style={styles.dateText}>Birthday: {startDate}</Text> */}
 
       <View style={{ flex: 0.15 }} />
