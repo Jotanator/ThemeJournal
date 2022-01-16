@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, SafeAreaView, TextInput } from 'react-native';
+// import {onSnapshot, collection} from "firebase/firestore/lite";
+// import { db } from '../Firebase/firebase'
+//import LoginScreen from './LoginScreen';
 
 export default class Home extends React.Component {
+
     constructor() {
         super();
         this.state = {

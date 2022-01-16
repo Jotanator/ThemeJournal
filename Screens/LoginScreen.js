@@ -1,7 +1,9 @@
 import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useState } from 'react'
-import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
-import { auth } from '../Firebase/firebase'
+import { KeyboardAvoidingView, StyleSheet, Text, SafeAreaView, View, TextInput, TouchableOpacity } from 'react-native'
+import { auth, db } from '../Firebase/firebase'
+// import {onSnapshot, collection} from "@firebase/firestore";
+import { collection, getDocs } from "firebase/firestore/lite";
 
 const LoginScreen = () => {
         const [email, setEmail] = useState('')
@@ -19,6 +21,14 @@ const LoginScreen = () => {
             return unsubcribe
         }, [])
 
+        const GetData = async () => {
+            const YrlythemeCol = collection(db, 'Yrlytheme');
+            const Yrlycollection = await getDocs(YrlythemeCol);
+            const YrlyList = Yrlycollection.docs.map(doc => doc.data());
+            console.log(YrlyList);
+            return YrlyList;
+        }
+
         const handleSignUp = () => {
             auth
               .createUserWithEmailAndPassword(email, password)
@@ -34,6 +44,7 @@ const LoginScreen = () => {
             .signInWithEmailAndPassword(email, password)
             .then(userCredentials => {
                 const user = userCredentials.user;
+                GetData();
                 console.log('Logged in with: ', user.email);
             })
             .catch(error => alert(error.message))
@@ -45,6 +56,10 @@ const LoginScreen = () => {
           style={styles.container}
           behavior='padding'
         >
+            <SafeAreaView>
+                <Text style={styles.titleText} adjustsFontSizeToFit={true}>
+                    GetData()</Text>
+            </SafeAreaView>
             <View style={styles.inputContainer}>
             <TextInput 
                 placeholder="Email"
