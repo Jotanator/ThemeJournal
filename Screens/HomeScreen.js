@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, SafeAreaView, TextInput } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, TextInput, Button } from 'react-native';
 
 export default class Home extends React.Component {
     constructor() {
@@ -14,6 +14,7 @@ export default class Home extends React.Component {
         };
     }
     render() {
+        const navigation = this.props.navigation;
         return (
             <SafeAreaView style={styles.container}>
                 <Text style={styles.titleText} adjustsFontSizeToFit={true}>
@@ -106,6 +107,7 @@ export default class Home extends React.Component {
                         {this.state.goal3Text}
                     </Text>
                 }
+                <Button title="Daily Log" onPress={() => navigation.navigate('DailyLog')}/>
                 <StatusBar style="auto" />
             </SafeAreaView>
         );
