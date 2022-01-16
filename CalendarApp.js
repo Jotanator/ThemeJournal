@@ -19,14 +19,14 @@ export default function App() {
       <View style={{ flex: 0.15 }} />
       <View style={styles.innerContainer}>
         <TouchableOpacity
-          onPress={() => Alert.alert('Button pressed')}
+          onPress={() => console.log('Button pressed')}
           style={styles.button}
         >
           <Text>Daily Activities</Text>
         </TouchableOpacity>
         <View style={{ flex: 0.15 }} />
         <TouchableOpacity
-          onPress={() => Alert.alert('Button pressed')}
+          onPress={() => console.log('Button pressed')}
           style={styles.button}
         >
           <Text>Journal</Text>
