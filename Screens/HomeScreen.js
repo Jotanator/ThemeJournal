@@ -109,11 +109,14 @@ export default class Home extends React.Component {
                     </Text>
                 }
                 <View flexDirection="row" style={{paddingTop: 40}}>
-                    <Button color="#c25e06" title="Daily Log" onPress={() => navigation.navigate('Daily')}/>
-                    <View style={{width: 10}}/>
-                    <Button color="#c25e06" title="Calendar" onPress={() => navigation.navigate('Calendar')}/>
-                    <View style={{width: 10}}/>
-                    <Button color="#c25e06" title="Free Write" onPress={() => navigation.navigate('FreeWrite')}/>
+                    <Button color="#c25e06" width='150' title="Daily Log" textAlign='center' onPress={() => navigation.navigate('Daily')}/>
+                    <View style={{width: 60}}/>
+                    <Button color="#c25e06" width='150' title="Calendar" textAlign='center' onPress={() => navigation.navigate('Calendar')}/>
+                </View>
+                <View flexDirection="row" style={{paddingTop: 10}}>
+                    <Button color="#c25e06" width='150' title="Free Write" textAlign='center' onPress={() => navigation.navigate('FreeWrite')}/>
+                    <View style={{width: 20}}/>
+                    <Button color="#c25e06" width='150' title="Personal Goals" textAlign='center' onPress={() => navigation.navigate('PersonG')}/>
                 </View>
                 <StatusBar style="auto" />
             </SafeAreaView>

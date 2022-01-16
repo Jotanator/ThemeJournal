@@ -10,6 +10,7 @@ import HomeScreen from './Screens/HomeScreen';
 import CalendarScreen from './Screens/CalendarApp';
 import DailyScreen from './Screens/DailyLog';
 import FreeWrite from './Screens/FreeWrite';
+import PersonalProgress from './Screens/PersonalProgress';
 
 
 
@@ -48,6 +49,7 @@ function App() {
         <Stack.Screen name="Calendar" component={CalendarScreen} />
         <Stack.Screen name="Daily" component={DailyScreen} />
         <Stack.Screen name="FreeWrite" component={FreeWrite} />
+        <Stack.Screen name="PersonG" component={PersonalProgress} />
       </Stack.Navigator>
     </NavigationContainer>
   );
