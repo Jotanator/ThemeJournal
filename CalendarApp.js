@@ -1,23 +1,21 @@
-import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, SafeAreaView, TextInput } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import CalendarPicker from 'react-native-calendar-picker';
 
-const [selectedStartDate, setSelectedStartDate] = useState(null);
+export default function App() {
+  const [selectedStartDate, setSelectedStartDate] = useState(null);
+  const startDate = selectedStartDate
+    ? selectedStartDate.format('YYYY-MM-DD').toString()
+    : '';
 
-export default class CalendarApp extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-    };
-  }
-  render() {
-    return (
-      <SafeAreaView style={styles.container}>
-        <CalendarPicker onDateChange={setSelectedStartDate} />
-        <StatusBar style="auto" />
-      </SafeAreaView>
-    );
-  }
+  return (
+    <View style={styles.container}>
+      <StatusBar style="auto" />
+      <CalendarPicker onDateChange={setSelectedStartDate} />
+      <Text style={styles.dateText}>Birthday: {startDate}</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -30,4 +28,4 @@ const styles = StyleSheet.create({
     paddingRight: 40,
     marginTop: StatusBar.currentHeight || 0,
   }
-});
+})
