@@ -8,6 +8,8 @@ export default function App() {
         YEAR OF...</Text>
       <Text style={styles.themeText} adjustsFontSizeToFit={true}>
         Self-care!</Text>
+      <Text style={styles.baseText} adjustsFontSizeToFit={true}>
+        Being able to help others begins with being able to help yourself</Text>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -16,12 +18,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#fcd9a4',
     alignItems: 'center',
     justifyContent: 'center',
   },
   baseText: {
-    fontFamily: "Cochin"
+    textAlign: "center"
   },
   titleText: {
     fontSize: 20,
