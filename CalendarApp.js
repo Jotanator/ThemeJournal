@@ -13,7 +13,7 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <CalendarPicker onDateChange={setSelectedStartDate} />
-      <Text style={styles.dateText}>Birthday: {startDate}</Text>
+      {/* <Text style={styles.dateText}>Birthday: {startDate}</Text> */}
 
       <View style={{ flex: 0.15 }} />
       <View style={styles.innerContainer}>
