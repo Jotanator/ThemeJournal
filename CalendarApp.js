@@ -2,6 +2,8 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, SafeAreaView, TextInput } from 'react-native';
 
+const [selectedStartDate, setSelectedStartDate] = useState(null);
+
 export default class CalendarApp extends React.Component {
   constructor() {
     super();
@@ -11,7 +13,7 @@ export default class CalendarApp extends React.Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-
+        <CalendarPicker onDateChange={setSelectedStartDate} />
         <StatusBar style="auto" />
       </SafeAreaView>
     );
