@@ -41,7 +41,7 @@ export default class App extends React.Component {
             <Text style={styles.themeText} adjustsFontSizeToFit={true}
               onPress={() => this.setState({ themeEditable: true })}
             >
-              {this.state.themeText}.
+              {this.state.themeText}
             </Text>
           }
 
