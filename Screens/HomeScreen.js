@@ -2,14 +2,13 @@ import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, SafeAreaView, TextInput, Button } from 'react-native';
 import * as fromLogin from './LoginScreen';
+import { useNavigation } from '@react-navigation/core'
 
 export default class Home extends React.Component {
     constructor() {
         super();
-        const title = await fromLogin.GetData()
-        console.log(title)
         this.state = {
-            themeEditable: false, themeText: title,
+            themeEditable: false, themeText: 'Self Care',
             descEditable: false, descText: "Being able to help others begins with being able to help yourself",
             goal1Editable: false, goal1Text: "Long term goal for this year #1",
             goal2Editable: false, goal2Text: "Long term goal for this year #2",
@@ -18,7 +17,6 @@ export default class Home extends React.Component {
     }
     render() {
         const navigation = this.props.navigation;
-        console.log(fromLogin.GetData().then());
         return (
             <SafeAreaView style={styles.container}>
                 <Text style={styles.titleText} adjustsFontSizeToFit={true}>
@@ -110,7 +108,7 @@ export default class Home extends React.Component {
                         {this.state.goal3Text}
                     </Text>
                 }
-                <Button title="Daily Log" onPress={() => navigation.navigate('DailyLog')}/>
+                <Button title="Daily Log" onPress={() => navigation.navigate('Daily')}/>
                 <StatusBar style="auto" />
             </SafeAreaView>
         );

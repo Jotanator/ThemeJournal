@@ -44,8 +44,6 @@ const LoginScreen = () => {
             .signInWithEmailAndPassword(email, password)
             .then(userCredentials => {
                 const user = userCredentials.user;
-                GetData();
-                console.log(fromLogin.GetData());
                 console.log('Logged in with: ', user.email);
             })
             .catch(error => alert(error.message))

@@ -19,7 +19,7 @@ export default function App() {
       <View style={{ flex: 0.15 }} />
       <View style={styles.innerContainer}>
         <TouchableOpacity
-          onPress={() => Alert.alert('Button pressed')}
+          //onPress={() => Alert.alert('Button pressed')}
           style={styles.button}
         >
           <Text>Daily Activities</Text>
