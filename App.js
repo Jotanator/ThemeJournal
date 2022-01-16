@@ -21,6 +21,7 @@ export default class App extends React.Component {
 
         {this.state.themeEditable ?
           <TextInput
+            style={styles.themeText}
             value={this.state.themeText}
             onChangeText={(value) => this.setState({ themeText: value })}
             autoFocus
@@ -35,12 +36,13 @@ export default class App extends React.Component {
 
         {this.state.descEditable ?
           <TextInput
+            style={styles.baseText}
             value={this.state.descText}
             onChangeText={(value) => this.setState({ descText: value })}
             autoFocus
             onBlur={() => this.setState({ descEditable: false })}
           /> :
-          <Text style={styles.descText} adjustsFontSizeToFit={true}
+          <Text style={styles.baseText} adjustsFontSizeToFit={true}
             onPress={() => this.setState({ descEditable: true })}
           >
             {this.state.descText}
@@ -49,6 +51,7 @@ export default class App extends React.Component {
 
         {this.state.goal1Editable ?
           <TextInput
+            style={styles.idealListText}
             value={this.state.goal1Text}
             onChangeText={(value) => this.setState({ goal1Text: value })}
             autoFocus
@@ -62,6 +65,7 @@ export default class App extends React.Component {
         }
         {this.state.goal2Editable ?
           <TextInput
+            style={styles.idealListText}
             value={this.state.goal2Text}
             onChangeText={(value) => this.setState({ goal2Text: value })}
             autoFocus
@@ -75,6 +79,7 @@ export default class App extends React.Component {
         }
         {this.state.goal3Editable ?
           <TextInput
+            style={styles.idealListText}
             value={this.state.goal3Text}
             onChangeText={(value) => this.setState({ goal3Text: value })}
             autoFocus
@@ -98,11 +103,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fcd9a4',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingLeft: 40,
+    paddingRight: 40,
     marginTop: StatusBar.currentHeight || 0,
   },
   baseText: {
-    paddingLeft: 140,
-    paddingRight: 140,
     textAlign: "center"
   },
   titleText: {
@@ -116,9 +121,7 @@ const styles = StyleSheet.create({
   },
   idealListText: {
     paddingTop: 40,
-    paddingLeft: 40,
-    paddingRight: 40,
     fontWeight: "bold",
-    textAlign: "justify"
+    textAlign: "center"
   }
 });
