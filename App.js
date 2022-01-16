@@ -118,6 +118,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fcd9a4',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: 22,
     paddingLeft: 40,
     paddingRight: 40,
     marginTop: StatusBar.currentHeight || 0,
@@ -127,7 +128,8 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontSize: 20,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    textAlign: "center"
   },
   themeText: {
     fontSize: 40,
