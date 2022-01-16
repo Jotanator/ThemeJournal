@@ -6,7 +6,7 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      themeEditable: false, themeText: "dream big",
+      themeEditable: false, themeText: "Email that report to Jake from Accounting",
       pers1Editable: false, pers1Text: "Something I am grateful for in my personal life #1",
       pers2Editable: false, pers2Text: "Something I am grateful for in my personal life #2",
       pers3Editable: false, pers3Text: "Something I am grateful for in my personal life #3",
@@ -19,17 +19,17 @@ export default class App extends React.Component {
     return (
       <SafeAreaView style={styles.container}>
         <ScrollView>
-          <Text style={styles.baseText} adjustsFontSizeToFit={true}>
+          <Text style={styles.titleText} adjustsFontSizeToFit={true}>
             Give yourself a goal for today: something that you must achieve even if it is the only thing that you achieve today. We recommend filling out this field in the morning.
           </Text>
 
-          <Text style={styles.titleText} adjustsFontSizeToFit={true}>
-            Today, I will
+          <Text style={styles.themeText} adjustsFontSizeToFit={true}>
+            "Today, I will..."
           </Text>
 
           {this.state.themeEditable ?
             <TextInput
-              style={styles.themeText}
+              style={styles.baseText}
               value={this.state.themeText}
               multiline={true}
               returnKeyType="done"
@@ -38,19 +38,19 @@ export default class App extends React.Component {
               autoFocus
               onBlur={() => this.setState({ themeEditable: false })}
             /> :
-            <Text style={styles.themeText} adjustsFontSizeToFit={true}
+            <Text style={styles.baseText} adjustsFontSizeToFit={true}
               onPress={() => this.setState({ themeEditable: true })}
             >
               {this.state.themeText}
             </Text>
           }
 
-          <Text style={styles.baseText} adjustsFontSizeToFit={true}>
+          <Text style={styles.titleText} adjustsFontSizeToFit={true}>
             Reflect on what you are grateful for. We recommend filling out these fields in the evening.
           </Text>
 
-          <Text style={styles.titleText} adjustsFontSizeToFit={true}>
-            I am grateful for
+          <Text style={styles.themeText} adjustsFontSizeToFit={true}>
+            "I am grateful for..."
           </Text>
 
           {this.state.pers1Editable ?
@@ -181,14 +181,15 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },
   titleText: {
-    paddingTop: 10,
+    paddingTop: 40,
     fontSize: 20,
     fontWeight: "bold",
     textAlign: "center"
   },
   themeText: {
-    fontSize: 40,
-    fontWeight: "bold",
+    paddingTop: 10,
+    paddingBottom: 10,
+    fontSize: 20,
     textAlign: "center"
   },
 });
