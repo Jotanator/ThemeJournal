@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, SafeAreaView, TextInput, Button } from 'react-native';
-// import {onSnapshot, collection} from "firebase/firestore/lite";
-// import { db } from '../Firebase/firebase'
-//import LoginScreen from './LoginScreen';
+import * as fromLogin from './LoginScreen';
 
 export default class Home extends React.Component {
-
     constructor() {
         super();
+        const title = await fromLogin.GetData()
+        console.log(title)
         this.state = {
-            themeEditable: false, themeText: "Self-Care",
+            themeEditable: false, themeText: title,
             descEditable: false, descText: "Being able to help others begins with being able to help yourself",
             goal1Editable: false, goal1Text: "Long term goal for this year #1",
             goal2Editable: false, goal2Text: "Long term goal for this year #2",
@@ -19,11 +18,11 @@ export default class Home extends React.Component {
     }
     render() {
         const navigation = this.props.navigation;
+        console.log(fromLogin.GetData().then());
         return (
             <SafeAreaView style={styles.container}>
                 <Text style={styles.titleText} adjustsFontSizeToFit={true}>
                     YEAR OF...</Text>
-
                 {this.state.themeEditable ?
                     <TextInput
                         style={styles.themeText}

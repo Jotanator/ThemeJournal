@@ -5,6 +5,15 @@ import { auth, db } from '../Firebase/firebase'
 // import {onSnapshot, collection} from "@firebase/firestore";
 import { collection, getDocs } from "firebase/firestore/lite";
 
+export const GetData = async () => {
+    const YrlythemeCol = collection(db, 'Yrlytheme');
+    const Yrlycollection = await getDocs(YrlythemeCol);
+    const YrlyList = Yrlycollection.docs.map(doc => doc.data());
+    console.log(YrlyList[0].ThemeName);
+    const string = YrlyList[0].ThemeName
+    return string;
+}
+
 const LoginScreen = () => {
         const [email, setEmail] = useState('')
         const [password, setPassword] = useState('')
@@ -20,14 +29,6 @@ const LoginScreen = () => {
 
             return unsubcribe
         }, [])
-
-        const GetData = async () => {
-            const YrlythemeCol = collection(db, 'Yrlytheme');
-            const Yrlycollection = await getDocs(YrlythemeCol);
-            const YrlyList = Yrlycollection.docs.map(doc => doc.data());
-            console.log(YrlyList);
-            return YrlyList;
-        }
 
         const handleSignUp = () => {
             auth
@@ -45,6 +46,7 @@ const LoginScreen = () => {
             .then(userCredentials => {
                 const user = userCredentials.user;
                 GetData();
+                console.log(fromLogin.GetData());
                 console.log('Logged in with: ', user.email);
             })
             .catch(error => alert(error.message))
