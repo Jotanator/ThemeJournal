@@ -23,6 +23,7 @@ export default class App extends React.Component {
           <TextInput
             style={styles.themeText}
             value={this.state.themeText}
+            multiline={true}
             onChangeText={(value) => this.setState({ themeText: value })}
             autoFocus
             onBlur={() => this.setState({ themeEditable: false })}
@@ -38,6 +39,7 @@ export default class App extends React.Component {
           <TextInput
             style={styles.baseText}
             value={this.state.descText}
+            multiline={true}
             onChangeText={(value) => this.setState({ descText: value })}
             autoFocus
             onBlur={() => this.setState({ descEditable: false })}
@@ -53,6 +55,7 @@ export default class App extends React.Component {
           <TextInput
             style={styles.idealListText}
             value={this.state.goal1Text}
+            multiline={true}
             onChangeText={(value) => this.setState({ goal1Text: value })}
             autoFocus
             onBlur={() => this.setState({ goal1Editable: false })}
@@ -67,6 +70,7 @@ export default class App extends React.Component {
           <TextInput
             style={styles.idealListText}
             value={this.state.goal2Text}
+            multiline={true}
             onChangeText={(value) => this.setState({ goal2Text: value })}
             autoFocus
             onBlur={() => this.setState({ goal2Editable: false })}
@@ -81,6 +85,7 @@ export default class App extends React.Component {
           <TextInput
             style={styles.idealListText}
             value={this.state.goal3Text}
+            multiline={true}
             onChangeText={(value) => this.setState({ goal3Text: value })}
             autoFocus
             onBlur={() => this.setState({ goal3Editable: false })}
